@@ -1,1 +1,1 @@
-# calcite-samples-2024
+# 2024 Calcite samples
