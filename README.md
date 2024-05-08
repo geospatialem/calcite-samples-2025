@@ -1,3 +1,3 @@
 # 2024 Calcite samples
 
-_Looking for the 2022 samples? Visit https://geospatialem.github.io/calcite-samples/_
+_Looking for the 2022 samples? Navigate to the [calcite-samples](https://geospatialem.github.io/calcite-samples) site._
