@@ -1,0 +1,22 @@
+.card-container {
+  margin: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  justify-content: space-evenly;
+}
+
+calcite-chip {
+  --calcite-chip-border-color: var(--calcite-color-status-danger);
+  --calcite-chip-text-color: var(--calcite-color-status-danger);
+}
+
+calcite-notice {
+  position: relative;
+  margin: 0.75rem;
+}
+
+calcite-pagination {
+  width: 100vw;
+  justify-content: center;
+}

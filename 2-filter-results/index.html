@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <title>Calcite Sample: Consistent Focus</title>
+
+    <script src="https://js.arcgis.com/calcite-components/3.1.0/calcite.esm.js" type="module"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./app.js" defer></script>
+  </head>
+
+  <body>
+
+    <main>
+  
+      <calcite-shell>
+        <!-- Panel to display records -->
+        <calcite-panel heading="Earthquake results" heading-level="1" description="Search by location to display results">
+  
+          <!-- Filter records -->
+          <calcite-filter placeholder="Try searching Alaska"></calcite-filter>
+  
+          <!-- Provide details of the app's initial state -->
+          <calcite-notice id="initial-note" open icon="information">
+            <div slot="title">Try searching a place of interest</div>
+            <div slot="message">Results will display when text is entered.</div>
+            </div>
+          </calcite-notice>
+  
+          <!-- An open property will be added to display the number of filtered records -->
+          <calcite-notice id="note">
+  
+            <div id="number-records" slot="title" aria-live="polite">
+              <!-- Content is automatically generated -->
+            </div>
+  
+          </calcite-notice>
+  
+          <!-- Container with Cards -->
+          <div class="card-container">
+            <!-- Content is automatically generated -->
+          </div>
+          <!-- Pagination -->
+          <calcite-pagination slot="footer" page-size="12" style="visibility:hidden"></calcite-pagination>
+  
+        </calcite-panel>
+      </calcite-shell>
+  
+    </main>
+
+  </body>
+
+</html>
