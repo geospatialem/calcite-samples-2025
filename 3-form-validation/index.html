@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <title>Calcite Sample: Form validation</title>
+
+    <script src="https://js.arcgis.com/calcite-components/3.1.0/calcite.esm.js" type="module"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./app.js"></script>
+  </head>
+
+  <body>
+
+    <calcite-shell>
+
+    <!-- Notice -->
+    <calcite-notice icon="information" active dismissible>
+      <div slot="title">Please fill out our questionnaire</div>
+      <div slot="message">Help us develop better Calcite components.</div>
+    </calcite-notice>
+
+    <!-- Navigation -->
+    <calcite-navigation slot="header">
+      <calcite-navigation-logo slot="logo" heading="Calcite Feedback Survey"></calcite-navigation-logo>
+          <!-- Desktop: Meter progress -->
+          <div class="desktop" slot="content-center">
+            <calcite-meter class="form-progress" label="Calcite feedback Survey form progress" fill-type="single" value="10" group-separator unit-label="%" max="100" high="100" value-label range-label-type="units" value-label-type="percent"></calcite-meter>
+          </div>
+            <!-- Theme switcher -->
+        <div id="theme-label" slot="content-end">
+          <calcite-label layout="inline">
+            Toggle theme
+            <calcite-switch id="theme-switch"></calcite-switch>
+          </calcite-label>
+        </div>
+        <!-- Mobile: Meter progress -->
+        <calcite-navigation class="mobile" slot="navigation-secondary">
+          <calcite-meter class="form-progress" slot="content-center" label="Calcite feedback Survey form progress" fill-type="single" value="10" group-separator unit-label="%" max="100" high="100" value-label range-label-type="units" value-label-type="percent"></calcite-meter>
+        </calcite-navigation>
+    </calcite-navigation>
+
+    <!-- Form -->
+    <form id="feedback-form">
+      <ol>
+      <fieldset id="feedback-survey-fieldset">
+        <legend>Feedback survey questionnaire</legend>
+
+        <li>
+              <!-- Text input & icon -->
+              <calcite-label for="first-name">
+                <span class="required">
+                  What is your first name?
+                  <!-- Icon -->
+                  <calcite-button id="theme-help" kind="neutral" appearance="transparent" icon-start="question" scale="s" label="Information"></calcite-button>
+                </span>
+              </calcite-label>
+                <calcite-input id="first-name" name="first-name" type="text" placeholder="John" required>
+                </calcite-input>
+
+                <!-- Tooltip -->
+              <calcite-tooltip reference-element="theme-help">
+                <span>Your first name is required for form submission so we can gather and follow-up on your feedback.</span>
+              </calcite-tooltip>
+            </li>
+
+              <!-- Autocomplete -->
+            <li>
+              <calcite-label for="locationEl">
+                <span class="required">Where are you from?</span>
+                <calcite-autocomplete id="locationEl" scale="m" class="locator-autocomplete" name="location" placeholder="Search for a location" required label="Where are you from? Required"></calcite-autocomplete>
+              </calcite-label>
+            </li>
+
+            <!-- Input Time Zone -->
+            <li>
+              <calcite-label>
+                <span class="required">What time zone are you in? <span class="sr-only">Required</span></span>
+                <calcite-input-time-zone clearable mode="region" name="time-zone" required></calcite-input-time-zone>
+              </calcite-label>
+            </li>
+
+            <!-- Select -->
+          <li>
+            <calcite-label>Where did you hear about Calcite components?
+              <calcite-select>
+                <calcite-option label="" value=""></calcite-option>
+                <calcite-option label="Esri Developer and Technology Summit" value="dev-tech"></calcite-option>
+                <calcite-option label="Search engine" value="search-engine"></calcite-option>
+                <calcite-option label="Social media" value="social-media"></calcite-option>
+                <calcite-option label="A little bird told me" value="a-bird"></calcite-option>
+                <calcite-option label="Other" value="other"></calcite-option>
+              </calcite-select>
+            </calcite-label>
+          </li>
+
+            <!-- Radio group -->
+          <li>
+            <fieldset>
+             <legend>Will you be using Calcite in an upcoming project?</legend>
+                <calcite-radio-button-group>
+                  <calcite-label layout="inline">
+                    Yes
+                    <calcite-radio-button value="yes"></calcite-radio-button>
+                  </calcite-label>
+
+                  <calcite-label layout="inline">
+                    No
+                    <calcite-radio-button value="no"></calcite-radio-button>
+                  </calcite-label>
+
+                  <calcite-label layout="inline">
+                    Unsure
+                    <calcite-radio-button value="unsure"></calcite-radio-button>
+                  </calcite-label>
+                </calcite-radio-button-group>
+              </calcite-label>
+            </fieldset>
+          </li>
+
+          <!-- Input number -->
+          <li>
+            <calcite-label>
+              <span>
+                How many components will you be using?
+                <!-- Icon -->
+                <calcite-button id="components-help" kind="neutral" appearance="transparent" icon-start="question" scale="s" label="Information"></calcite-button>
+              </span>
+              <calcite-input-number integer name="number-components" min="0" max="100"></calcite-input-number>
+            </calcite-label>
+
+            <!-- Tooltip -->
+            <calcite-tooltip reference-element="components-help">
+              <span>Calcite has 100 components, how many do you plan to use between 0 and 100?</span>
+            </calcite-tooltip>
+          </li>
+
+            <!-- Slider -->
+          <li>
+            <calcite-label>How many components are you familiar with?
+              <calcite-slider snap label-handles label-ticks ticks="10" label="Number of components" value="0" min="0" max="100" step="1"></calcite-slider>
+            </calcite-label>
+          </li>
+
+            <!-- Combobox -->
+          <li>
+            <calcite-label>What industry are you in?
+              <calcite-combobox placeholder="Select favorites&hellip;" max-items="6">
+                <calcite-combobox-item value="natural-resources" heading="Natural Resources"></calcite-combobox-item>
+                <calcite-combobox-item value="agriculture" heading="Agriculture"></calcite-combobox-item>
+                <calcite-combobox-item value="forestry" heading="Forestry"></calcite-combobox-item>
+                <calcite-combobox-item value="mining" heading="Mining"></calcite-combobox-item>
+                <calcite-combobox-item value="business" heading="Business"></calcite-combobox-item>
+                <calcite-combobox-item value="education" heading="Education"></calcite-combobox-item>
+                <calcite-combobox-item value="utilities" heading="Utilities"></calcite-combobox-item>
+                <calcite-combobox-item value="transportation" heading="Transportation"></calcite-combobox-item>
+                <calcite-combobox-item value="other" heading="Other"></calcite-combobox-item>
+              </calcite-combobox>
+            </calcite-label>
+          </li>
+
+            <!-- Segmented Control -->
+          <li>
+            <calcite-label for="radioGroup">How usable is the Calcite Design System?</calcite-label>
+            <calcite-segmented-control layout="horizontal" id="radioGroup" form="feedback-form" name="radioGroup">
+              <calcite-segmented-control-item value="undecided" checked>Undecided
+              </calcite-segmented-control-item>
+              <calcite-segmented-control-item value="unusable">Not usable
+              </calcite-segmented-control-item>
+              <calcite-segmented-control-item value="usable">Usable
+              </calcite-segmented-control-item>
+              <calcite-segmented-control-item value="very-usable">Very usable
+              </calcite-segmented-control-item>
+            </calcite-segmented-control>
+          </li>
+
+            <!-- Checkboxes -->
+          <li>
+            <fieldset>
+              <legend>
+                What is the most important aspect(s) of a component?
+              </legend>
+              <calcite-label layout="inline">
+                <calcite-checkbox></calcite-checkbox>
+                Configurability
+              </calcite-label>
+              <calcite-label layout="inline">
+                <calcite-checkbox></calcite-checkbox>
+                Accessibility
+              </calcite-label>
+              <calcite-label layout="inline">
+                <calcite-checkbox></calcite-checkbox>
+                Ease of use
+              </calcite-label>
+            </fieldset>
+          </li>
+
+            <!-- Date picker -->
+          <li>
+            <calcite-label for="date-picker">When did you hear about Calcite components?</calcite-label>
+            <calcite-input-date-picker id="date-picker" name="date-picker" min="2019-05-24"></calcite-input-date-picker>
+          </li>
+
+            <!-- Rating -->
+          <li>
+            <calcite-label for="star-rating">How many stars would you give Calcite components?</calcite-label>
+            <calcite-rating id="star-rating" value="1"></calcite-rating>
+          </li>
+
+          <li>
+            <calcite-label>
+              <span class="required">Provide your feedback to the Calcite team. <span class="sr-only">Required</span></span>
+              <calcite-text-area placeholder="Provide your feedback" max-length="500" rows="8" name="feedback-comments" required></calcite-text-area>
+            </calcite-label>
+          </li>
+
+      </fieldset>
+    </ol>
+        <!-- Button -->
+        <div id="button-footer">
+          <calcite-button id="clear" appearance="outline">Clear form</calcite-button>
+          <calcite-button form="feedback-form" id="submit" type="submit">Submit form</calcite-button>
+        </div>
+    </form>
+
+    <!-- Alert -->
+    <calcite-alert id="alert" icon auto-close>
+      <div slot="message" aria-live="polite">
+        <strong>Success!</strong>
+        Thank you for your feedback.
+      </div>
+    </calcite-alert>
+
+    <p id="announce-clear" class="sr-only" aria-live="polite"></p>
+
+    <!-- Progress -->
+    <calcite-progress id="progress" type="indeterminate" hidden></calcite-progress>
+
+    </calcite-shell>
+
+
+
+  </body>
+
+  <script type="module">
+    import { suggestLocations } from "https://js.arcgis.com/4.32/@arcgis/core/rest/locator.js";
+
+    function removeOldItems(locatorAutocomplete) {
+          locatorAutocomplete.querySelectorAll(".temporary").forEach((element) => element.remove());
+        }
+
+        function emptyText(locatorAutocomplete) {
+          locatorAutocomplete.value = "";
+          removeOldItems(locatorAutocomplete);
+          return;
+        }
+
+        async function getSuggestions(locatorAutocomplete, suggestController) {
+          const signal = suggestController.signal;
+          removeOldItems(locatorAutocomplete);
+          locatorAutocomplete.open = true;
+
+          const response = await suggestLocations(
+            "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer",
+            {
+              text: locatorAutocomplete.inputValue,
+            },
+            { signal },
+          );
+
+          if (suggestController.aborted) {
+            return;
+          }
+
+          if (response.length === 0) {
+            const noResults = document.createElement("calcite-notice");
+            noResults.className = "temporary";
+            noResults.open = true;
+            noResults.kind = "danger";
+            noResults.icon = "exclamation-mark-triangle";
+            noResults.innerHTML = `
+              <div slot="title">No results</div>
+        <div slot="message">Try something else</div>`;
+            noResults.slot = "content-top";
+            locatorAutocomplete.appendChild(noResults);
+          } else {
+            response.slice(0, 5).forEach((location) => {
+              const item = document.createElement("calcite-autocomplete-item");
+              item.className = "temporary";
+              item.value = location.magicKey;
+              item.label = location.text;
+              item.heading = location.text;
+              locatorAutocomplete.appendChild(item);
+            });
+          }
+        }
+
+        const locateForms = document.querySelectorAll(".locate-form");
+
+        locateForms.forEach((form) => {
+          form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const data = new FormData(event.target);
+          });
+        });
+
+        const locatorAutocompletes = document.querySelectorAll(".locator-autocomplete");
+
+        locatorAutocompletes.forEach((locatorAutocomplete) => {
+          let loadingTimer, controller;
+
+          locatorAutocomplete.addEventListener("calciteAutocompleteTextChange", async (event) => {
+            const inputValue = event.target.inputValue;
+
+            if (!inputValue) {
+              emptyText(locatorAutocomplete);
+              return;
+            }
+          });
+
+
+          locatorAutocomplete.addEventListener("calciteAutocompleteTextInput", async (event) => {
+            const inputValue = event.target.inputValue;
+
+            if (!inputValue) {
+              emptyText(locatorAutocomplete);
+              return;
+            }
+
+            locatorAutocomplete.loading = true;
+
+            if (controller) {
+              controller.abort();
+            }
+
+            clearTimeout(loadingTimer);
+
+            controller = new AbortController();
+            const signal = controller.signal;
+            await getSuggestions(locatorAutocomplete, controller);
+
+            loadingTimer = setTimeout(() => {
+              locatorAutocomplete.loading = false;
+            }, 500);
+          });
+
+          locatorAutocomplete.addEventListener("calciteAutocompleteChange", (event) => {
+            const selected = Array.from(locatorAutocomplete.querySelectorAll("calcite-autocomplete-item")).find(
+              (item) => item.value === event.target.value,
+            );
+            locatorAutocomplete.inputValue = selected?.heading;
+            removeOldItems(locatorAutocomplete);
+          });
+        });
+  </script>
+
+
+  </html>

@@ -35,3 +35,33 @@ Please ensure testing is conducted for the following:
    - `pagination`
    - `panel`
    - `shell`
+3. [Form validation](/3-form-validation/index.html): Form components, validation, completion status, and regions. **Out of scope**: Official form submission.
+   - `alert`
+   - `autocomplete`
+   - `autocomplete-item`
+   - `button`
+   - `checkbox`
+   - `combobox`
+   - `combobox-item`
+   - `input`
+   - `input-date-picker`
+   - `input-number`
+   - `input-time-zone`
+   - `label`
+   - `meter`
+   - `navigation`
+   - `navigagion-logo`
+   - `notice`
+   - `option`
+   - `progress`
+   - `radio-button`
+   - `radio-button-group`
+   - `rating`
+   - `segmented-control`
+   - `segmented-control-item`
+   - `select`
+   - `shell`
+   - `slider`
+   - `switch`
+   - `text-area`
+   - `tooltip`
