@@ -1,0 +1,97 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.demo-component {
+  margin: 1rem;
+}
+
+/* Carousel customization */
+.custom-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 75vw;
+  width: 25rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.custom-content calcite-button {
+  margin: 1rem auto 0;
+}
+
+.custom-content calcite-chip {
+  margin: 2rem auto;
+}
+
+calcite-carousel,
+calcite-flow {
+  width: 95%;
+}
+
+/* Flow customization */
+#first-flow-item-block {
+  --calcite-block-padding: 0px;
+}
+
+/* Sheet customization */
+calcite-sheet {
+  --calcite-sheet-scrim-background: rgba(60, 204, 180, 0.75);
+}
+
+#plane {
+  --calcite-color-brand: #c66a4a;
+  --calcite-ui-icon-color: #c66a4a;
+  --calcite-chip-icon-color: #c66a4a;
+}
+
+#plane[selected] {
+  --calcite-chip-background-color: rgba(198, 106, 74, 0.25);
+}
+
+#car {
+  --calcite-color-brand: #3cccb4;
+  --calcite-ui-icon-color: #3cccb4;
+  --calcite-chip-icon-color: #3cccb4;
+}
+
+#car[selected] {
+  --calcite-chip-background-color: rgba(60, 204, 180, 0.25);
+}
+
+#ship {
+  --calcite-color-brand: #7a81ff;
+  --calcite-ui-icon-color: #7a81ff;
+  --calcite-chip-icon-color:#7a81ff;
+}
+
+#ship[selected] {
+  --calcite-chip-background-color: rgba(122, 129, 255, 0.25);
+}
+
+#bike {
+  --calcite-color-brand: #0096ff;
+  --calcite-ui-icon-color: #0096ff;
+  --calcite-chip-icon-color:#0096ff;
+}
+
+#bike[selected] {
+  --calcite-chip-background-color: rgba(0, 150, 255, 0.25);
+}
+
+#walking {
+  --calcite-color-brand: #f260a1;
+  --calcite-ui-icon-color: #f260a1;
+  --calcite-chip-icon-color:#f260a1;
+}
+
+#walking[selected] {
+  --calcite-chip-background-color: rgba(242, 95, 161, 0.25);
+}

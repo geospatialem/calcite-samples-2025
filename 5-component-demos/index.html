@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <title>Calcite Sample: Component demos</title>
+
+    <script src="https://js.arcgis.com/calcite-components/3.1.0/calcite.esm.js" type="module"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./app.js"></script>
+
+  </head>
+
+  <body>
+
+    <calcite-shell>
+
+      <calcite-navigation slot="header">
+        <calcite-navigation-logo aria-live="polite" slot="logo" heading="Stepper demo">
+        </calcite-navigation-logo>
+          <calcite-chip-group label="Select a component demo" selection-mode="single-persist" slot="content-center">
+            <calcite-chip selected value="calcite-stepper" label="Stepper">Stepper</calcite-chip>
+            <calcite-chip value="calcite-tabs" label="Tabs">Tabs</calcite-chip>
+            <calcite-chip value="calcite-table" label="Table">Table</calcite-chip>
+            <calcite-chip value="calcite-carousel" label="Carousel">Carousel</calcite-chip>
+            <calcite-chip value="calcite-color-picker" label="Color Picker">Color Picker</calcite-chip>
+            <calcite-chip value="calcite-dialog" label="Dialog">Dialog</calcite-chip>
+            <calcite-chip value="calcite-flow" label="Flow">Flow</calcite-chip>
+            <calcite-chip value="calcite-sheet" label="Sheet">Sheet</calcite-chip>
+        </calcite-chip-group>
+      </calcite-navigation>
+
+      <calcite-panel>
+
+
+
+        <!-- Stepper -->
+          <calcite-stepper icon class="demo-component">
+            <calcite-stepper-item heading="Add info">
+              <p aria-live="polite" class="sr-only">Info contents have been added</p>
+              <p>Info contents</p>
+            </calcite-stepper-item>
+            <calcite-stepper-item heading="Add data">
+              <p aria-live="polite" class="sr-only">Data contents have been added</p>
+              <p>Data contents</p>
+            </calcite-stepper-item>
+            <calcite-stepper-item heading="Add images">
+              <p aria-live="polite" class="sr-only">Images contents have been added</p>
+              <p>Image contents</p>
+            </calcite-stepper-item>
+            <calcite-stepper-item heading="Review">
+              <p aria-live="polite" class="sr-only">Review contents have been added</p>
+              <p>Review contents</p>
+            </calcite-stepper-item>
+          </calcite-stepper>
+
+
+        <!-- Tabs -->
+        <calcite-tabs hidden class="demo-component">
+          <calcite-tab-nav slot="title-group">
+              <calcite-tab-title selected>Watercraft</calcite-tab-title>
+              <calcite-tab-title>Automobiles</calcite-tab-title>
+              <calcite-tab-title>Aircraft</calcite-tab-title>
+          </calcite-tab-nav>
+          <calcite-tab selected>
+            <p>Recommended for coastal use</p>
+          </calcite-tab>
+          <calcite-tab>
+            <p>A good choice for inland adventure</p>
+          </calcite-tab>
+          <calcite-tab>
+            <p>Cross continents quickly</p>
+          </calcite-tab>
+        </calcite-tabs>
+
+        <!-- Table -->
+        <calcite-table id="hiking-dataset" class="demo-component" caption="Hiking trails" bordered numbered selection-mode="multiple" hidden>
+          <calcite-table-row slot="table-header">
+            <calcite-table-header heading="Hiking trail" description="Designated routes"></calcite-table-header>
+            <calcite-table-header heading="Season" description="(all, summer, winter)"></calcite-table-header>
+            <calcite-table-header heading="Terrain type" description="(paved, gravel)"></calcite-table-header>
+            <calcite-table-header heading="Length" description="(in miles)"></calcite-table-header>
+          </calcite-table-row>
+          <calcite-table-row>
+            <calcite-table-cell>Prairie Loop</calcite-table-cell>
+            <calcite-table-cell>All seasons</calcite-table-cell>
+            <calcite-table-cell>Paved</calcite-table-cell>
+            <calcite-table-cell>2.2 miles</calcite-table-cell>
+          </calcite-table-row>
+          <calcite-table-row>
+            <calcite-table-cell>Trout Brook</calcite-table-cell>
+            <calcite-table-cell>Summer</calcite-table-cell>
+            <calcite-table-cell>Gravel</calcite-table-cell>
+            <calcite-table-cell>1.5 miles</calcite-table-cell>
+          </calcite-table-row>
+          <calcite-table-row>
+            <calcite-table-cell>Interpretive</calcite-table-cell>
+            <calcite-table-cell>All seasons</calcite-table-cell>
+            <calcite-table-cell>Gravel</calcite-table-cell>
+            <calcite-table-cell>0.4 miles</calcite-table-cell>
+          </calcite-table-row>
+          <calcite-table-row>
+            <calcite-table-cell>Deer Valley</calcite-table-cell>
+            <calcite-table-cell>All seasons</calcite-table-cell>
+            <calcite-table-cell>Gravel and Paved</calcite-table-cell>
+            <calcite-table-cell>2.3 miles</calcite-table-cell>
+          </calcite-table-row>
+        </calcite-table>
+
+        <!-- Carousel -->
+        <calcite-carousel class="demo-component" label="Great new features" hidden>
+          <calcite-carousel-item label="Pie chart">
+              <div class="custom-content">
+                  <calcite-chip scale="l" icon="pie-chart"></calcite-chip>
+                  <span>
+                      Pie charts are a great way to visualize data. They're easy to understand
+                      and can be used in a variety of ways.
+                  </span>
+              </div>
+          </calcite-carousel-item>
+          <calcite-carousel-item label="Scatter plot">
+              <div class="custom-content">
+                  <calcite-chip scale="l" icon="graph-scatter-plot"></calcite-chip>
+                  <span>
+                      The scatter plot displays the relationship between multiple variables. It's a
+                      great way to visualize data.
+                  </span>
+              </div>
+          </calcite-carousel-item>
+          <calcite-carousel-item label="Histogram">
+              <div class="custom-content">
+                  <calcite-chip scale="l" icon="box-chart"></calcite-chip>
+                  <span>
+                      Box charts are another great way to visualize data to illustrate trends and ranges.
+                  </span>
+                  <calcite-button icon-start="graph-moving-average" kind="neutral">Browse examples</calcite-button>
+              </div>
+          </calcite-carousel-item>
+          <calcite-carousel-item label="Heat chart">
+              <div class="custom-content">
+                  <calcite-chip scale="l" icon="heat-chart"></calcite-chip>
+                  <span>
+                      The heat chart bins data into a grid and uses color or saturation to
+                      represent the values.
+                  </span>
+              </div>
+          </calcite-carousel-item>
+        </calcite-carousel>
+
+        <!-- Color Picker -->
+        <calcite-color-picker class="demo-component" alpha-channel hidden></calcite-color-picker>
+
+
+        <!-- Dialog -->
+        <calcite-dialog open hidden placement="center" class="demo-component" width="s" heading="Unsaved changes" id="example-dialog" placement="top" drag-enabled resizable>
+          <p>Are you sure you want to continue?</p>
+          <p>There are unsaved changes, and if you proceed the changes will be lost.</p>
+          <calcite-button slot="footer-start" appearance="outline" kind="neutral" class="example-dialog-button">
+              Cancel
+          </calcite-button>
+          <calcite-button slot="footer-end" class="example-dialog-button">
+              Proceed without saving
+          </calcite-button>
+        </calcite-dialog>
+
+
+        <!-- Flow -->
+        <calcite-flow id="example-flow" class="demo-component" hidden>
+          <calcite-flow-item heading="Places of Education">
+              <calcite-block id="first-flow-item-block" heading="Recommended for you" description="4 results"
+                  expanded>
+                <calcite-list label="Educational institutions">
+                  <calcite-list-item label="Narnia Community College" description="Wardobe, IA">
+                  </calcite-list-item>
+                  <calcite-list-item label="University of Acme" description="Acmeton, CA">
+                  </calcite-list-item>
+                  <calcite-list-item label="Roadrunner Trade School" description="Zion, UT">
+                  </calcite-list-item>
+                  <calcite-list-item label="Cartographic Institute" description="Redlands, CA">
+                  </calcite-list-item>
+                </calcite-list>
+              </calcite-block>
+          </calcite-flow-item>
+      </calcite-flow>
+
+        <!-- Sheet -->
+        <calcite-sheet class="demo-component" hidden label="Transit options" outside-close-disabled position="inline-end" display-mode="float" id="example-sheet">
+          <calcite-panel closable heading="Transit options" id="sheet-panel">
+              <calcite-block expanded heading="Transit modalities available">
+                <calcite-chip-group label="demo-group-label" selection-mode="multiple">
+                  <calcite-chip id="plane" icon="plane" value="Plane">
+                      Plane
+                  </calcite-chip>
+                  <calcite-chip id="car" icon="car" value="Car">
+                      Car
+                  </calcite-chip>
+                  <calcite-chip id="ship" icon="embark" value="Ship">
+                      Ship
+                  </calcite-chip>
+                  <calcite-chip id="bike" icon="biking" selected value="Bike">
+                      Bike
+                  </calcite-chip>
+                  <calcite-chip id="walking" icon="walking" value="Walking">
+                      Walking
+                  </calcite-chip>
+                </calcite-chip-group>
+              </calcite-block>
+              <calcite-block collapsible disabled heading="Layer effects" description="Adjust blur, highlight, and more"
+                  icon-start="effects">
+                  <calcite-label>
+                      Effect type
+                      <calcite-segmented-control width="full">
+                          <calcite-segmented-control-item value="Blur">Blur</calcite-segmented-control-item>
+                          <calcite-segmented-control-item checked value="Highlight">Highlight</calcite-segmented-control-item>
+                          <calcite-segmented-control-item value="Party mode">Party mode</calcite-segmented-control-item>
+                      </calcite-segmented-control>
+                  </calcite-label>
+                  <calcite-label>
+                      Effect intensity
+                      <calcite-slider label-handles label-ticks ticks="25"></calcite-slider>
+                  </calcite-label>
+              </calcite-block>
+              <calcite-button disabled slot="footer" width="full" appearance="outline">
+                  Do something
+              </calcite-button>
+          </calcite-panel>
+      </calcite-sheet>
+
+      </calcite-panel>
+
+    </calcite-shell>
+
+  </body>
+</html>
