@@ -65,3 +65,30 @@ Please ensure testing is conducted for the following:
    - `switch`
    - `text-area`
    - `tooltip`
+4. [Form elements](/4-form-elements/index.html): Form elements including `read-only` context. **Out of scope**: Official form submission, and switching between `calcite-menu-item`s, `"Profile"` and `"Feedback Survey"` in the `calcite-navigation`.
+   - `accordion`
+   - `accordion-item`
+   - `chip`
+   - `chip-group`
+   - `dropdown-group`
+   - `dropdown-item`
+   - `inline-editable`
+   - `input`
+   - `input-number`
+   - `input-text`
+   - `input-time-picker`
+   - `label`
+   - `list`
+   - `list-item`
+   - `menu`
+   - `menu-item`
+   - `navigation`
+   - `navigation-logo`
+   - `navigation-user`
+   - `popover`
+   - `shell`
+   - `split-button`
+   - `tile`
+   - `tile-group`
+   - `tree`
+   - `tree-item`

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <title>Calcite Sample: Form elements</title>
+
+    <script src="https://js.arcgis.com/calcite-components/3.1.0/calcite.esm.js" type="module"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./app.js"></script>
+  </head>
+
+  <body>
+
+    <calcite-shell>
+
+      <calcite-navigation slot="header">
+        <calcite-navigation-logo slot="logo" heading="Employee Dashboard" description="Esri">
+        </calcite-navigation-logo>
+        <calcite-menu slot="content-end">
+            <calcite-menu-item text="Profile" icon-start="user" text-enabled></calcite-menu-item>
+            <calcite-menu-item active text="Feedback Survey" icon-start="file-text" text-enabled></calcite-menu-item>
+        </calcite-menu>
+        <calcite-navigation-user slot="user" full-name="Wendell Berry" username="w_berry"></calcite-navigation-user>
+    </calcite-navigation>
+
+      <form id="dynamic-form">
+        <fieldset id="dyanmic-fieldset">
+          <legend>Office feedback questionnaire</legend>
+
+          <ol>
+
+          <calcite-accordion>
+
+            <!-- Read only -->
+            <calcite-accordion-item heading="General" icon-start="organization" expanded>
+              <div class="accordion-content">
+
+              <!-- Organization -->
+              <li>
+                <calcite-label for="organization">
+                  Organization
+                </calcite-label>
+                <calcite-input id="organization" read-only value="Esri" name="organization">
+                </calcite-input>
+              </li>
+
+              <!-- Employee ID number -->
+              <li>
+                <calcite-label for="employee-id">
+                  Employee ID Number
+                </calcite-label>
+                <calcite-input-number id="team" read-only value="99999" name="employee-id">
+                </calcite-input-number>
+              </li>
+
+              <!-- Group -->
+              <li>
+                <calcite-label for="group">
+                  Group
+                </calcite-label>
+                <calcite-input-text id="group" read-only value="Software Development" name="group">
+                </calcite-input-text>
+              </li>
+
+             <!-- ZIP code -->
+             <li>
+              <calcite-label for="zip-code">
+                ZIP Code
+              </calcite-label>
+              <calcite-inline-editable controls>
+                <calcite-input value="92373" placeholder="Zip code" id="zip-code"></calcite-input>
+            </calcite-inline-editable>
+            </li>
+
+              <!-- Regional office -->
+              <li>
+                <calcite-label for="region-office">
+                  <span>Regional office
+                    <!-- Icon -->
+                    <calcite-button id="popover-button" kind="neutral" appearance="transparent" icon-start="question" scale="s" label="Information"></calcite-button>
+                  </span>
+                </calcite-label>
+                <calcite-popover heading="Regional office" label="Regional office" reference-element="popover-button" closable>
+                  <p id="popover">
+                      What regional office do you report to, or if you are a remote employee, what is the closest regional office to your location?
+                  </p>
+              </calcite-popover>
+                <calcite-tree id="region-office" selection-mode="single-persist">
+                  <calcite-tree-item>
+                    Denver
+                  </calcite-tree-item>
+                  <calcite-tree-item expanded>East Coast
+                    <calcite-tree slot="children">
+                      <calcite-tree-item>Charlotte</calcite-tree-item>
+                      <calcite-tree-item>New York</calcite-tree-item>
+                      <calcite-tree-item>Philadelphia</calcite-tree-item>
+                      <calcite-tree-item>Washington, DC</calcite-tree-item>
+                    </calcite-tree>
+                  </calcite-tree-item>
+                  <calcite-tree-item>
+                    Minneapolis
+                  </calcite-tree-item>
+                  <calcite-tree-item>
+                    San Antonio
+                  </calcite-tree-item>
+                  <calcite-tree-item expanded>
+                    West Coast
+                    <calcite-tree slot="children">
+                      <calcite-tree-item>
+                        Olympia
+                      </calcite-tree-item>
+                      <calcite-tree-item selected>
+                        Redlands
+                      </calcite-tree-item>
+                    </calcite-tree>
+                  </calcite-tree-item>
+                </calcite-tree>
+              </li>
+
+            </div>
+
+          </calcite-accordion-item>
+
+          <!-- Preferences -->
+          <calcite-accordion-item heading="Preferences" icon-start="gear" expanded>
+
+            <div class="accordion-content">
+
+            <!-- Office setting -->
+            <li>
+              <calcite-label for="preferred-office">Office setting</calcite-label>
+              <calcite-chip-group id="preferred-office" label="Preferred office setting" selection-mode="single-persist">
+                <calcite-chip value="home-office" label="Home office">Home office</calcite-chip>
+                <calcite-chip selected value="hybrid" label="Hybrid">Hybrid</calcite-chip>
+                <calcite-chip value="office" label="Office">Office</calcite-chip>
+                <calcite-chip value="nomad" label="Nomad">Nomad</calcite-chip>
+                <calcite-chip value="traveler" label="Traveler">Traveler</calcite-chip>
+              </calcite-chip-group>
+            </li>
+
+            <!-- Office perks -->
+            <li>
+              <calcite-label for="office-perks">Rank office perks</calcite-label>
+
+              <div id="office-perks">
+              <calcite-label for="high-priority">Priority perks</calcite-label>
+              <calcite-list id-"high-priority" drag-enabled group="office-perks" label="High priority perks">
+                  <calcite-list-item label="Casual work attire"></calcite-list-item>
+                  <calcite-list-item label="Free coffee"></calcite-list-item>
+                  <calcite-list-item label="Taco Tuesdays"></calcite-list-item>
+              </calcite-list>
+              <calcite-label for="not-priority">Not of interest</calcite-label>
+              <calcite-list id="not-priority" drag-enabled group="office-perks" label="Non-prioritized perks">
+                <calcite-list-item label="Foosball"></calcite-list-item>
+                <calcite-list-item label="Pinball"></calcite-list-item>
+                <calcite-list-item label="Happy hours"></calcite-list-item>
+                <calcite-list-item label="Foosball"></calcite-list-item>
+                <calcite-list-item label="Fitness equipment and room"></calcite-list-item>
+                <calcite-list-item label="Meditation room"></calcite-list-item>
+              </calcite-list>
+            </div>
+            </li>
+
+          </div>
+
+          </calcite-accordion-item>
+
+          <!-- Training -->
+          <calcite-accordion-item heading="Training opportunities" icon-start="education" expanded>
+
+            <div class="accordion-content">
+
+              <!-- Training preferences -->
+              <li>
+                <calcite-label for="training">Training preferences</calcite-label>
+                <calcite-tile-group id="training" label="Training preferences" selection-mode="multiple" selection-appearance="icon">
+                    <calcite-tile icon="initiative" heading="Leadership"
+                        description="Develop essential skills such as communication, decision-making, and team management.">
+                    </calcite-tile>
+                    <calcite-tile icon="file-code" heading="Web development"
+                        description="Technical coursework in JavaScript, TypeScript, CSS, and HTML.">
+                    </calcite-tile>
+                    <calcite-tile icon="deep-learning-project" heading="Project management"
+                        description="Focus on planning, organizing, leading, monitoring, and closing project work.">
+                    </calcite-tile>
+                </calcite-tile-group>
+              </li>
+
+              <li>
+                <calcite-label for="earliest-offering">Earliest offering</calcite-label><calcite-input-time-picker id="earliest-offering" name="earliest-offering" value="07:00" min="07:00" max="16:00"></calcite-input-time-picker>
+                <calcite-label for="latest-offering">Latest offering</calcite-label><calcite-input-time-picker id="latest-offering" name="latest-offering" value="16:00" min="08:00" max="16:00"></calcite-input-time-picker>
+              </li>
+
+            </div>
+
+          </calcite-accordion-item>
+
+          </calcite-accordion>
+
+
+          <!-- Form actions -->
+          <div id="form-actions">
+            <calcite-split-button primary-text="Form actions" primary-icon-start="file-text">
+              <calcite-dropdown-group selection-mode="none" group-title="Form actions">
+                  <calcite-dropdown-item id="saveForm" icon-start="save">Save</calcite-dropdown-item>
+                  <calcite-dropdown-item id="submitForm" icon-start="submit">Submit</calcite-dropdown-item>
+              </calcite-dropdown-group>
+          </calcite-split-button>
+        </div>
+
+      </ol>
+        </fieldset>
+      </form>
+
+      <!-- Alert -->
+      <calcite-alert id="alert" icon auto-close>
+        <div id="alert-message" slot="message" aria-live="polite">
+        </div>
+      </calcite-alert>
+
+    </calcite-shell>
+
+  </body>
+</html>
