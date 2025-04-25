@@ -8,6 +8,7 @@ require(["esri/core/reactiveUtils"], (reactiveUtils) => {
   const actionBarEl = document.getElementById("custom-action-bar");
   const searchEl = document.getElementById("search-el");
   const expandEl = document.getElementById("expand-el");
+  const loaderEl = document.querySelector("calcite-loader");
 
   let mode = "light";
 
@@ -44,6 +45,8 @@ require(["esri/core/reactiveUtils"], (reactiveUtils) => {
           }
         }
       );
+      loaderEl.hidden = true;
+      contextSpanEl.innerText = "The consistent focus with regions application has loaded";
     });
 
     // Initialize the mutation observer
