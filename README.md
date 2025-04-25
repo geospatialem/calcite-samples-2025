@@ -98,9 +98,11 @@ Please ensure testing is conducted for the following:
    - `chip`
    - `chip-group`
    - `dialog`
+   - `fab`
    - `flow`
    - `flow-item`
    - `label`
+   - `link`
    - `list`
    - `list-item`
    - `navigation`

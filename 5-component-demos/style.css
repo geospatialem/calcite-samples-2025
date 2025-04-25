@@ -95,3 +95,9 @@ calcite-sheet {
 #walking[selected] {
   --calcite-chip-background-color: rgba(242, 95, 161, 0.25);
 }
+
+/* Link customization */
+calcite-link,
+calcite-fab {
+  padding: 5rem;
+}
