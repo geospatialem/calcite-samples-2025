@@ -2,7 +2,7 @@
 
 _Looking for the 2022 samples? Navigate to the [calcite-samples](https://geospatialem.github.io/calcite-samples) site._
 
-## Testing scope
+## Testing scope (n=82)
 
 Please ensure testing is conducted for the following:
 
