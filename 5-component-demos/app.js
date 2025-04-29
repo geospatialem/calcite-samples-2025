@@ -85,6 +85,21 @@ window.onload = () => {
     });
   });
 
+  document.getElementById("cancel-dialog").addEventListener("click", () => {
+    dialogEl.open = false;
+  });
+
+  document.getElementById("toggle-modal").addEventListener("click", () => {
+    dialogEl.modal = !dialogEl.modal;
+    if (dialogEl.modal) {
+      document.getElementById("toggle-modal").innerText = "Toggle off modal property";
+      dialogEl.heading = "Unsaved changes (modal)";
+    } else {
+      document.getElementById("toggle-modal").innerText = "Toggle on modal property";
+      dialogEl.heading = "Unsaved changes (non-modal)";
+    }
+  });
+
   /* Flow and Flow Item */
   const flow = document.getElementById("example-flow");
   const items = document.querySelectorAll("calcite-list-item");

@@ -154,14 +154,14 @@
 
 
         <!-- Dialog -->
-        <calcite-dialog open hidden placement="center" class="demo-component" width="s" heading="Unsaved changes" id="example-dialog" placement="top" drag-enabled resizable>
+        <calcite-dialog open outside-close-disabled aria-live="polite" hidden placement="center" class="demo-component" width="s" heading="Unsaved changes (non-modal)" id="example-dialog" placement="top" drag-enabled resizable>
           <p>Are you sure you want to continue?</p>
           <p>There are unsaved changes, and if you proceed the changes will be lost.</p>
-          <calcite-button slot="footer-start" appearance="outline" kind="neutral" class="example-dialog-button">
+          <calcite-button id="cancel-dialog" slot="footer-start" appearance="outline" kind="neutral">
               Cancel
           </calcite-button>
-          <calcite-button slot="footer-end" class="example-dialog-button">
-              Proceed without saving
+          <calcite-button id="toggle-modal" slot="footer-end">
+              Toggle on modal property
           </calcite-button>
         </calcite-dialog>
 
