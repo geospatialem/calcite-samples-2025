@@ -1,13 +1,51 @@
 window.onload = () => {
   
+  const queryParams = new URLSearchParams(window.location.search);
   const demoEls = [...document.getElementsByClassName("demo-component")];
   const chipGroupEl = document.querySelector("calcite-chip-group");
   const navigationLogoEl = document.querySelector("calcite-navigation-logo");
   const dialogEl = document.querySelector("calcite-dialog");
   const panelEl = document.querySelector("calcite-panel");
 
+  (async () => {
+    await customElements.whenDefined("calcite-sheet");
+    await document.querySelector("calcite-sheet").componentOnReady();
+    if (queryParams.get("comp") !== null && queryParams.get("comp") !== "stepper") {
+      const selectedComponent = queryParams.get("comp");
+      document.getElementById(selectedComponent).selected = true;
+      demoEls.forEach((demoEl) => demoEl.hidden = true);
+      const calciteCompLabel = document.getElementById(selectedComponent).label;
+      const calciteComp = document.getElementById(selectedComponent).value;
+      navigationLogoEl.heading = `${calciteCompLabel} demo`;
+      if (calciteComp == "calcite-sheet") {
+        document.querySelector(calciteComp).open = true;
+        sheetEl.open = true;
+        sheetPanel.closed = false;
+      } else if (calciteComp == "calcite-dialog") {
+        document.querySelector(calciteComp).open = true;
+      }
+      document.querySelector(calciteComp).removeAttribute("hidden");
+      try {
+        document.querySelector(calciteComp).setFocus();
+      } catch(err) {}
+      try {
+        document.getElementById("sheet-btn").remove();
+      } catch(err) {}
+      try {
+        document.getElementById("dialog-btn").remove();
+      } catch(err) {}
+    } else {
+      queryParams.set("comp", "stepper");
+      history.replaceState(null, null, "?" + queryParams.toString());
+    }
+  })();
+
+
   /* Chip Group and Chip */
   chipGroupEl.addEventListener("calciteChipGroupSelect", (evt) => {
+    let compName = evt.target.selectedItems[0].id;
+    queryParams.set("comp", compName);
+    history.replaceState(null, null, "?" + queryParams.toString());
     navigationLogoEl.heading = `${evt.target.selectedItems[0].label} demo`;
     demoEls.forEach((demoEl) => demoEl.hidden = true);
     const calciteComp = evt.target.selectedItems[0].value;
