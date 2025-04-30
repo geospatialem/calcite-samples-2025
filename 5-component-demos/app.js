@@ -12,7 +12,13 @@ window.onload = () => {
     await document.querySelector("calcite-sheet").componentOnReady();
     if (queryParams.get("comp") !== null && queryParams.get("comp") !== "stepper") {
       const selectedComponent = queryParams.get("comp");
-      document.getElementById(selectedComponent).selected = true;
+      try {
+        document.getElementById(selectedComponent).selected = true;
+      } catch(err) {
+        queryParams.set("comp", "stepper");
+        history.replaceState(null, null, "?" + queryParams.toString());
+        return;
+      }
       demoEls.forEach((demoEl) => demoEl.hidden = true);
       const calciteCompLabel = document.getElementById(selectedComponent).label;
       const calciteComp = document.getElementById(selectedComponent).value;

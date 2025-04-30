@@ -37,22 +37,22 @@
 
 
         <!-- Stepper -->
-          <calcite-stepper icon class="demo-component">
+          <calcite-stepper icon class="demo-component" numbered>
             <calcite-stepper-item heading="Add info">
               <p aria-live="polite" class="sr-only">Info contents have been added</p>
-              <p>Info contents</p>
+              <p>Step 1 add info contents</p>
             </calcite-stepper-item>
             <calcite-stepper-item heading="Add data">
               <p aria-live="polite" class="sr-only">Data contents have been added</p>
-              <p>Data contents</p>
+              <p>Step 2 add data contents</p>
             </calcite-stepper-item>
             <calcite-stepper-item heading="Add images">
               <p aria-live="polite" class="sr-only">Images contents have been added</p>
-              <p>Image contents</p>
+              <p>Step 3 add image contents</p>
             </calcite-stepper-item>
             <calcite-stepper-item heading="Review">
               <p aria-live="polite" class="sr-only">Review contents have been added</p>
-              <p>Review contents</p>
+              <p>Step 4 review contents</p>
             </calcite-stepper-item>
           </calcite-stepper>
 
@@ -60,18 +60,18 @@
         <!-- Tabs -->
         <calcite-tabs hidden class="demo-component">
           <calcite-tab-nav slot="title-group">
-              <calcite-tab-title selected>Watercraft</calcite-tab-title>
-              <calcite-tab-title>Automobiles</calcite-tab-title>
-              <calcite-tab-title>Aircraft</calcite-tab-title>
+              <calcite-tab-title selected icon-end="embark">Watercraft</calcite-tab-title>
+              <calcite-tab-title icon-end="car">Automobiles</calcite-tab-title>
+              <calcite-tab-title icon-end="plane">Aircraft</calcite-tab-title>
           </calcite-tab-nav>
           <calcite-tab selected>
-            <p>Recommended for coastal use</p>
+            <p>Recommended transit vehicle across or through bodies of water.</p>
           </calcite-tab>
           <calcite-tab>
-            <p>A good choice for inland adventure</p>
+            <p>Also referred to as a car, and land vehicle to transport passengers and/or goods. Ideal for roads and usually contains four wheels.</p>
           </calcite-tab>
           <calcite-tab>
-            <p>Cross continents quickly</p>
+            <p>Capable of flight containing wings and multiple enginges to transfer passengers and/or goods through the air.</p>
           </calcite-tab>
         </calcite-tabs>
 
@@ -113,7 +113,7 @@
         <calcite-carousel class="demo-component" label="Great new features" hidden>
           <calcite-carousel-item label="Pie chart">
               <div class="custom-content">
-                  <calcite-chip scale="l" icon="pie-chart"></calcite-chip>
+                  <calcite-chip scale="l" icon="pie-chart" label="Pie chart"></calcite-chip>
                   <span>
                       Pie charts are a great way to visualize data. They're easy to understand
                       and can be used in a variety of ways.
@@ -122,7 +122,7 @@
           </calcite-carousel-item>
           <calcite-carousel-item label="Scatter plot">
               <div class="custom-content">
-                  <calcite-chip scale="l" icon="graph-scatter-plot"></calcite-chip>
+                  <calcite-chip scale="l" icon="graph-scatter-plot" label="Scatter plot"></calcite-chip>
                   <span>
                       The scatter plot displays the relationship between multiple variables. It's a
                       great way to visualize data.
@@ -131,16 +131,15 @@
           </calcite-carousel-item>
           <calcite-carousel-item label="Histogram">
               <div class="custom-content">
-                  <calcite-chip scale="l" icon="box-chart"></calcite-chip>
+                  <calcite-chip scale="l" icon="box-chart" label="Box chart"></calcite-chip>
                   <span>
                       Box charts are another great way to visualize data to illustrate trends and ranges.
                   </span>
-                  <calcite-button icon-start="graph-moving-average" kind="neutral">Browse examples</calcite-button>
               </div>
           </calcite-carousel-item>
           <calcite-carousel-item label="Heat chart">
               <div class="custom-content">
-                  <calcite-chip scale="l" icon="heat-chart"></calcite-chip>
+                  <calcite-chip scale="l" icon="heat-chart" label="Heat chart"></calcite-chip>
                   <span>
                       The heat chart bins data into a grid and uses color or saturation to
                       represent the values.
@@ -189,25 +188,25 @@
         <calcite-sheet class="demo-component" hidden label="Transit options" outside-close-disabled position="inline-end" display-mode="float" id="example-sheet">
           <calcite-panel closable heading="Transit options" id="sheet-panel">
               <calcite-block expanded heading="Transit modalities available">
-                <calcite-chip-group label="demo-group-label" selection-mode="multiple">
-                  <calcite-chip id="plane" icon="plane" value="Plane">
+                <calcite-chip-group label="Transit options" selection-mode="multiple">
+                  <calcite-chip id="plane" icon="plane" value="plane" label="Plane">
                       Plane
                   </calcite-chip>
-                  <calcite-chip id="car" icon="car" value="Car">
+                  <calcite-chip id="car" icon="car" value="car" label="Car">
                       Car
                   </calcite-chip>
-                  <calcite-chip id="ship" icon="embark" value="Ship">
+                  <calcite-chip id="ship" icon="embark" value="ship" label="Ship">
                       Ship
                   </calcite-chip>
-                  <calcite-chip id="bike" icon="biking" selected value="Bike">
+                  <calcite-chip id="bike" icon="biking" selected value="bike" label="Bike">
                       Bike
                   </calcite-chip>
-                  <calcite-chip id="walking" icon="walking" value="Walking">
+                  <calcite-chip id="walking" icon="walking" value="walking" label="Walking">
                       Walking
                   </calcite-chip>
                 </calcite-chip-group>
               </calcite-block>
-              <calcite-block collapsible disabled heading="Layer effects" description="Adjust blur, highlight, and more"
+              <calcite-block id="layer-effects-block" collapsible disabled heading="Layer effects" description="Adjust blur, highlight, and more"
                   icon-start="effects">
                   <calcite-label>
                       Effect type
@@ -222,15 +221,21 @@
                       <calcite-slider label-handles label-ticks ticks="25"></calcite-slider>
                   </calcite-label>
               </calcite-block>
-              <calcite-button disabled slot="footer" width="full" appearance="outline">
-                  Do something
+              <calcite-tooltip reference-element="layer-effects-block" overlay-positioning="fixed" placement="bottom">
+                <span>Can tooltips be present on disabled blocks?</span>
+            </calcite-tooltip>
+              <calcite-button id="submit-transit" disabled slot="footer" width="full" appearance="outline">
+                  Submit
               </calcite-button>
+              <calcite-tooltip reference-element="submit-transit" overlay-positioning="fixed" placement="top">
+                <span>Can tooltips be present on disabled buttons?</span>
+            </calcite-tooltip>
           </calcite-panel>
       </calcite-sheet>
 
       <!-- Link -->
-      <calcite-link class="demo-component" hidden href="https://developers.arcgis.com/calcite-design-system/get-started/">
-        Get started with Calcite
+      <calcite-link class="demo-component" hidden href="https://developers.arcgis.com/calcite-design-system/" target="_blank">
+        Calcite Design System (opens in a new window)
       </calcite-link>
       
       <!-- FAB -->

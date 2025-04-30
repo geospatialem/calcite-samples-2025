@@ -101,3 +101,7 @@ calcite-link,
 calcite-fab {
   padding: 5rem;
 }
+
+calcite-flow {
+  width: 30vw;
+}

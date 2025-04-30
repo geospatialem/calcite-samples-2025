@@ -92,13 +92,13 @@ Please ensure testing is conducted for the following:
    - `tile-group`
    - `tree`
    - `tree-item`
-5. [Component demos](/5-component-demos/index.html): Standalone component demos that can be interacted with via a `calcite-chip-group`. **_Include `disabled` components scoped within the Shell demo._** **Out of scope**: Contents and context in each component upon selection. Also includes any `"Cancel"` or `"Proceed without saving"` buttons in `calcite-dialog`.  
+5. [Component demos](/5-component-demos/index.html): Standalone component demos that can be interacted with via a `calcite-chip-group`. **_Include `disabled` components scoped within the Shell demo._** **Out of scope**: Contents and context in each component.
    a. [Stepper](/calcite-samples-2025/5-component-demos/index.html?comp=stepper)  
    b. [Tabs](/calcite-samples-2025/5-component-demos/index.html?comp=tabs)  
    c. [Table](/calcite-samples-2025/5-component-demos/index.html?comp=table)  
    d. [Carousel](/calcite-samples-2025/5-component-demos/index.html?comp=carousel)  
    e. [Color Picker](/calcite-samples-2025/5-component-demos/index.html?comp=color-picker)  
-   f. [Dialog](/calcite-samples-2025/5-component-demos/index.html?comp=dialog)  
+   f. [Dialog](/calcite-samples-2025/5-component-demos/index.html?comp=dialog): **_Note: The dialog has a button to toggle the component's `modal` property._**  
    g. [Flow](/calcite-samples-2025/5-component-demos/index.html?comp=flow)  
    h. [Sheet](/calcite-samples-2025/5-component-demos/index.html?comp=sheet)  
    i. [Link](/calcite-samples-2025/5-component-demos/index.html?comp=link)  
@@ -133,3 +133,4 @@ Please ensure testing is conducted for the following:
    - `table-cell`
    - `table-header`
    - `table-row`
+   - `tooltip`
