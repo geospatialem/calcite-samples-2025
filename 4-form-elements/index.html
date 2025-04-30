@@ -202,7 +202,7 @@
 
           <!-- Form actions -->
           <div id="form-actions">
-            <calcite-split-button primary-text="Form actions" primary-icon-start="file-text">
+            <calcite-split-button primary-text="Form actions" primary-icon-start="file-text" primary-label="Form actions" dropdown-label="Save or Submit the form">
               <calcite-dropdown-group selection-mode="none" group-title="Form actions">
                   <calcite-dropdown-item id="saveForm" icon-start="save">Save</calcite-dropdown-item>
                   <calcite-dropdown-item id="submitForm" icon-start="submit">Submit</calcite-dropdown-item>
@@ -215,8 +215,8 @@
       </form>
 
       <!-- Alert -->
-      <calcite-alert id="alert" icon auto-close>
-        <div id="alert-message" slot="message" aria-live="polite">
+      <calcite-alert id="alert" icon auto-close label="Form actions message">
+        <div id="alert-message" slot="message">
         </div>
       </calcite-alert>
 
