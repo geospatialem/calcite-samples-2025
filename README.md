@@ -92,7 +92,7 @@ Please ensure testing is conducted for the following:
    - `tile-group`
    - `tree`
    - `tree-item`
-5. [Component demos](/5-component-demos/index.html): Standalone component demos that can be interacted with via a `calcite-chip-group`. **_Include `disabled` components scoped within the Shell demo._** **Out of scope**: Contents and context in each component.
+5. [Component demos](/5-component-demos/index.html): Standalone component demos that can be interacted with via a `calcite-chip-group`. **_Include `disabled` components scoped within the Shell demo._** **Out of scope**: Contents and context in each component.  
    a. [Stepper](/calcite-samples-2025/5-component-demos/index.html?comp=stepper)  
    b. [Tabs](/calcite-samples-2025/5-component-demos/index.html?comp=tabs)  
    c. [Table](/calcite-samples-2025/5-component-demos/index.html?comp=table)  
