@@ -98,12 +98,15 @@ window.onload = () => {
   document.getElementById("toggle-modal").addEventListener("click", () => {
     dialogEl.modal = !dialogEl.modal;
     if (dialogEl.modal) {
+      dialogEl.focusTrapDisabled = false;
       document.getElementById("toggle-modal").innerText = "Toggle off modal property";
       dialogEl.heading = "Unsaved changes (modal)";
     } else {
+      dialogEl.focusTrapDisabled = true;
       document.getElementById("toggle-modal").innerText = "Toggle on modal property";
       dialogEl.heading = "Unsaved changes (non-modal)";
     }
+    dialogEl.updateFocusTrapElements();
   });
 
   /* Flow and Flow Item */

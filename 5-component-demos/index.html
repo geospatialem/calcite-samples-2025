@@ -21,14 +21,14 @@
           <calcite-chip-group label="Select a component demo" selection-mode="single-persist" slot="content-center">
             <calcite-chip selected id="stepper" value="calcite-stepper" label="Stepper">Stepper</calcite-chip>
             <calcite-chip id="tabs" value="calcite-tabs" label="Tabs">Tabs</calcite-chip>
-            <calcite-chip id="table" value="calcite-table" label="Table">Table</calcite-chip>
-            <calcite-chip id="carousel" value="calcite-carousel" label="Carousel">Carousel</calcite-chip>
-            <calcite-chip id="color-picker" value="calcite-color-picker" label="Color Picker">Color Picker</calcite-chip>
-            <calcite-chip id="dialog" value="calcite-dialog" label="Dialog">Dialog</calcite-chip>
-            <calcite-chip id="flow" value="calcite-flow" label="Flow">Flow</calcite-chip>
-            <calcite-chip id="sheet" value="calcite-sheet" label="Sheet">Sheet</calcite-chip>
             <calcite-chip id="link" value="calcite-link" label="Link">Link</calcite-chip>
             <calcite-chip id="fab" value="calcite-fab" label="FAB">FAB</calcite-chip>
+            <calcite-chip id="carousel" value="calcite-carousel" label="Carousel">Carousel</calcite-chip>
+            <calcite-chip id="dialog" value="calcite-dialog" label="Dialog">Dialog</calcite-chip>
+            <calcite-chip id="table" value="calcite-table" label="Table">Table</calcite-chip>
+            <calcite-chip id="color-picker" value="calcite-color-picker" label="Color Picker">Color Picker</calcite-chip>
+            <calcite-chip id="flow" value="calcite-flow" label="Flow">Flow</calcite-chip>
+            <calcite-chip id="sheet" value="calcite-sheet" label="Sheet">Sheet</calcite-chip>
         </calcite-chip-group>
       </calcite-navigation>
 
@@ -37,25 +37,24 @@
 
 
         <!-- Stepper -->
-          <calcite-stepper icon class="demo-component" numbered>
-            <calcite-stepper-item heading="Add info">
-              <p aria-live="polite" class="sr-only">Info contents have been added</p>
-              <p>Step 1 add info contents</p>
-            </calcite-stepper-item>
-            <calcite-stepper-item heading="Add data">
-              <p aria-live="polite" class="sr-only">Data contents have been added</p>
-              <p>Step 2 add data contents</p>
-            </calcite-stepper-item>
-            <calcite-stepper-item heading="Add images">
-              <p aria-live="polite" class="sr-only">Images contents have been added</p>
-              <p>Step 3 add image contents</p>
-            </calcite-stepper-item>
-            <calcite-stepper-item heading="Review">
-              <p aria-live="polite" class="sr-only">Review contents have been added</p>
-              <p>Step 4 review contents</p>
-            </calcite-stepper-item>
-          </calcite-stepper>
-
+        <calcite-stepper icon class="demo-component" numbered>
+          <calcite-stepper-item heading="Add info">
+            <p aria-live="polite" class="sr-only">Info contents have been added</p>
+            <p>Step 1 add info contents</p>
+          </calcite-stepper-item>
+          <calcite-stepper-item heading="Add data">
+            <p aria-live="polite" class="sr-only">Data contents have been added</p>
+            <p>Step 2 add data contents</p>
+          </calcite-stepper-item>
+          <calcite-stepper-item heading="Add images">
+            <p aria-live="polite" class="sr-only">Images contents have been added</p>
+            <p>Step 3 add image contents</p>
+          </calcite-stepper-item>
+          <calcite-stepper-item heading="Review">
+            <p aria-live="polite" class="sr-only">Review contents have been added</p>
+            <p>Step 4 review contents</p>
+          </calcite-stepper-item>
+        </calcite-stepper>
 
         <!-- Tabs -->
         <calcite-tabs hidden class="demo-component">
@@ -75,39 +74,13 @@
           </calcite-tab>
         </calcite-tabs>
 
-        <!-- Table -->
-        <calcite-table id="hiking-dataset" class="demo-component" caption="Hiking trails" bordered numbered selection-mode="multiple" hidden>
-          <calcite-table-row slot="table-header">
-            <calcite-table-header heading="Hiking trail" description="Designated routes"></calcite-table-header>
-            <calcite-table-header heading="Season" description="(all, summer, winter)"></calcite-table-header>
-            <calcite-table-header heading="Terrain type" description="(paved, gravel)"></calcite-table-header>
-            <calcite-table-header heading="Length" description="(in miles)"></calcite-table-header>
-          </calcite-table-row>
-          <calcite-table-row>
-            <calcite-table-cell>Prairie Loop</calcite-table-cell>
-            <calcite-table-cell>All seasons</calcite-table-cell>
-            <calcite-table-cell>Paved</calcite-table-cell>
-            <calcite-table-cell>2.2 miles</calcite-table-cell>
-          </calcite-table-row>
-          <calcite-table-row>
-            <calcite-table-cell>Trout Brook</calcite-table-cell>
-            <calcite-table-cell>Summer</calcite-table-cell>
-            <calcite-table-cell>Gravel</calcite-table-cell>
-            <calcite-table-cell>1.5 miles</calcite-table-cell>
-          </calcite-table-row>
-          <calcite-table-row>
-            <calcite-table-cell>Interpretive</calcite-table-cell>
-            <calcite-table-cell>All seasons</calcite-table-cell>
-            <calcite-table-cell>Gravel</calcite-table-cell>
-            <calcite-table-cell>0.4 miles</calcite-table-cell>
-          </calcite-table-row>
-          <calcite-table-row>
-            <calcite-table-cell>Deer Valley</calcite-table-cell>
-            <calcite-table-cell>All seasons</calcite-table-cell>
-            <calcite-table-cell>Gravel and Paved</calcite-table-cell>
-            <calcite-table-cell>2.3 miles</calcite-table-cell>
-          </calcite-table-row>
-        </calcite-table>
+        <!-- Link -->
+        <calcite-link class="demo-component" hidden href="https://developers.arcgis.com/calcite-design-system/" target="_blank">
+          Calcite Design System (opens in a new window)
+        </calcite-link>
+      
+        <!-- FAB -->
+        <calcite-fab class="demo-component" icon="add-layer" text="Add a new layer" hidden></calcite-fab>
 
         <!-- Carousel -->
         <calcite-carousel class="demo-component" label="Great new features" hidden>
@@ -148,12 +121,8 @@
           </calcite-carousel-item>
         </calcite-carousel>
 
-        <!-- Color Picker -->
-        <calcite-color-picker class="demo-component" alpha-channel hidden></calcite-color-picker>
-
-
         <!-- Dialog -->
-        <calcite-dialog open outside-close-disabled aria-live="polite" hidden placement="center" class="demo-component" width="s" heading="Unsaved changes (non-modal)" id="example-dialog" placement="top" drag-enabled resizable>
+        <calcite-dialog open outside-close-disabled focus-trap-disabled aria-live="polite" hidden placement="center" class="demo-component" width="s" heading="Unsaved changes (non-modal)" id="example-dialog" placement="top" drag-enabled resizable>
           <p>Are you sure you want to continue?</p>
           <p>There are unsaved changes, and if you proceed the changes will be lost.</p>
           <calcite-button id="cancel-dialog" slot="footer-start" appearance="outline" kind="neutral">
@@ -163,7 +132,43 @@
               Toggle on modal property
           </calcite-button>
         </calcite-dialog>
+        
+        <!-- Table -->
+        <calcite-table id="hiking-dataset" class="demo-component" caption="Hiking trails" bordered numbered selection-mode="multiple" hidden>
+          <calcite-table-row slot="table-header">
+            <calcite-table-header heading="Hiking trail" description="Designated routes"></calcite-table-header>
+            <calcite-table-header heading="Season" description="(all, summer, winter)"></calcite-table-header>
+            <calcite-table-header heading="Terrain type" description="(paved, gravel)"></calcite-table-header>
+            <calcite-table-header heading="Length" description="(in miles)"></calcite-table-header>
+          </calcite-table-row>
+          <calcite-table-row>
+            <calcite-table-cell>Prairie Loop</calcite-table-cell>
+            <calcite-table-cell>All seasons</calcite-table-cell>
+            <calcite-table-cell>Paved</calcite-table-cell>
+            <calcite-table-cell>2.2 miles</calcite-table-cell>
+          </calcite-table-row>
+          <calcite-table-row>
+            <calcite-table-cell>Trout Brook</calcite-table-cell>
+            <calcite-table-cell>Summer</calcite-table-cell>
+            <calcite-table-cell>Gravel</calcite-table-cell>
+            <calcite-table-cell>1.5 miles</calcite-table-cell>
+          </calcite-table-row>
+          <calcite-table-row>
+            <calcite-table-cell>Interpretive</calcite-table-cell>
+            <calcite-table-cell>All seasons</calcite-table-cell>
+            <calcite-table-cell>Gravel</calcite-table-cell>
+            <calcite-table-cell>0.4 miles</calcite-table-cell>
+          </calcite-table-row>
+          <calcite-table-row>
+            <calcite-table-cell>Deer Valley</calcite-table-cell>
+            <calcite-table-cell>All seasons</calcite-table-cell>
+            <calcite-table-cell>Gravel and Paved</calcite-table-cell>
+            <calcite-table-cell>2.3 miles</calcite-table-cell>
+          </calcite-table-row>
+        </calcite-table>
 
+        <!-- Color Picker -->
+        <calcite-color-picker class="demo-component" alpha-channel hidden></calcite-color-picker>
 
         <!-- Flow -->
         <calcite-flow id="example-flow" class="demo-component" hidden>
@@ -182,7 +187,7 @@
                 </calcite-list>
               </calcite-block>
           </calcite-flow-item>
-      </calcite-flow>
+        </calcite-flow>
 
         <!-- Sheet -->
         <calcite-sheet class="demo-component" hidden label="Transit options" outside-close-disabled position="inline-end" display-mode="float" id="example-sheet">
@@ -231,15 +236,7 @@
                 <span>Can tooltips be present on disabled buttons?</span>
             </calcite-tooltip>
           </calcite-panel>
-      </calcite-sheet>
-
-      <!-- Link -->
-      <calcite-link class="demo-component" hidden href="https://developers.arcgis.com/calcite-design-system/" target="_blank">
-        Calcite Design System (opens in a new window)
-      </calcite-link>
-      
-      <!-- FAB -->
-      <calcite-fab class="demo-component" icon="add-layer" text="Add a new layer" hidden></calcite-fab>
+        </calcite-sheet>
 
 
       </calcite-panel>
