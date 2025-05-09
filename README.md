@@ -94,14 +94,14 @@ Please ensure testing is conducted for the following:
 5. [Component demos](/5-component-demos/index.html): Standalone component demos that can be interacted with via a `calcite-chip-group`. **_Include `disabled` components scoped within the Shell demo._** **Out of scope**: Contents and context in each component.  
    a. [Stepper](/calcite-samples-2025/5-component-demos/index.html?comp=stepper)  
    b. [Tabs](/calcite-samples-2025/5-component-demos/index.html?comp=tabs)  
-   c. [Table](/calcite-samples-2025/5-component-demos/index.html?comp=table)  
-   d. [Carousel](/calcite-samples-2025/5-component-demos/index.html?comp=carousel)  
-   e. [Color Picker](/calcite-samples-2025/5-component-demos/index.html?comp=color-picker)  
-   f. [Dialog](/calcite-samples-2025/5-component-demos/index.html?comp=dialog): **_Note: The dialog has a button to toggle the component's `modal` property._**  
-   g. [Flow](/calcite-samples-2025/5-component-demos/index.html?comp=flow)  
-   h. [Sheet](/calcite-samples-2025/5-component-demos/index.html?comp=sheet)  
-   i. [Link](/calcite-samples-2025/5-component-demos/index.html?comp=link)  
-   j. [FAB](/calcite-samples-2025/5-component-demos/index.html?comp=fab)
+   c. [Link](/calcite-samples-2025/5-component-demos/index.html?comp=link)  
+   d. [FAB](/calcite-samples-2025/5-component-demos/index.html?comp=fab)
+   e. [Carousel](/calcite-samples-2025/5-component-demos/index.html?comp=carousel)  
+   f. [Dialog](/calcite-samples-2025/5-component-demos/index.html?comp=dialog): **_Note: The dialog has a button to toggle the component's `modal` property._**
+   g. [Table](/calcite-samples-2025/5-component-demos/index.html?comp=table)  
+   h. [Color Picker](/calcite-samples-2025/5-component-demos/index.html?comp=color-picker)  
+   i. [Flow](/calcite-samples-2025/5-component-demos/index.html?comp=flow)  
+   f. [Sheet](/calcite-samples-2025/5-component-demos/index.html?comp=sheet)
    - `block`
    - `button`
    - `chip`
