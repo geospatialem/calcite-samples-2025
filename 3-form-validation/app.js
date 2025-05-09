@@ -37,9 +37,9 @@ window.onload = () => {
     }, 2500);
   });
 
-  alert.addEventListener("calciteAlertOpen", () => {
-    alert.setFocus();
-  });
+  alert.addEventListener("calciteAlertOpen", () => alert.setFocus());
+
+  alert.addEventListener("calciteAlertClose", () => document.getElementById("submit").setFocus());
 
   clear.addEventListener("click", () => {
     submitForm = false;
@@ -232,6 +232,7 @@ function clearForm() {
     submitForm = false;
   } else {
     document.getElementById("announce-clear").innerText = "The form has been cleared";
+    document.getElementById("first-name").setFocus();
   }
 }
 

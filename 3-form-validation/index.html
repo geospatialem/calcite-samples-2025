@@ -51,7 +51,7 @@
               <!-- Text input & icon -->
               <calcite-label for="first-name">
                 <span class="required">
-                  What is your first name?
+                  What is your first name? (Required)
                   <!-- Icon -->
                   <calcite-button id="theme-help" kind="neutral" appearance="transparent" icon-start="question" scale="s" label="Information"></calcite-button>
                 </span>
@@ -68,7 +68,7 @@
               <!-- Autocomplete -->
             <li>
               <calcite-label for="locationEl">
-                <span class="required">Where are you from?</span>
+                <span class="required">Where are you from? (Required)</span>
                 <calcite-autocomplete id="locationEl" scale="m" class="locator-autocomplete" name="location" placeholder="Search for a location" required label="Where are you from? Required"></calcite-autocomplete>
               </calcite-label>
             </li>
@@ -76,7 +76,7 @@
             <!-- Input Time Zone -->
             <li>
               <calcite-label>
-                <span class="required">What time zone are you in? <span class="sr-only">Required</span></span>
+                <span class="required">What time zone are you in? (Required)</span>
                 <calcite-input-time-zone clearable mode="region" name="time-zone" required></calcite-input-time-zone>
               </calcite-label>
             </li>
@@ -210,7 +210,7 @@
 
           <li>
             <calcite-label>
-              <span class="required">Provide your feedback to the Calcite team. <span class="sr-only">Required</span></span>
+              <span class="required">Provide your feedback to the Calcite team (Required)</span>
               <calcite-text-area placeholder="Provide your feedback" max-length="500" rows="8" name="feedback-comments" required></calcite-text-area>
             </calcite-label>
           </li>
@@ -232,7 +232,7 @@
       </div>
     </calcite-alert>
 
-    <p id="announce-clear" class="sr-only" aria-live="polite"></p>
+    <p id="announce-clear" class="sr-only" aria-live="assertive"></p>
 
     <!-- Progress -->
     <calcite-progress id="progress" type="indeterminate" hidden></calcite-progress>
