@@ -8,7 +8,6 @@ Please ensure testing is conducted for the following:
 
 - Color contrast for light and dark modes per [1.4.3: Contrast (Minimum) (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum)
 - Text spacing per [1.4.12: Text Spacing (Level AA)](https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html#test-rules)
-- Mobile testing with VoiceOver (iOS) and TalkBack (Android)
 
 ## Samples
 
